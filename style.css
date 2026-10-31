@@ -1,0 +1,107 @@
+:root {
+  --bg: #F2F3F7;
+  --surface: #FFFFFF;
+  --line: #E1E4EB;
+  --ink: #141A2A;
+  --ink2: #4E566A;
+  --primary: #1F2B4D;
+  --link: #1F2B4D;
+  --cloth: #1F2B4D;
+  --gilt: #D8B56A;
+  --cover-ink: #F4F1E8;
+  --cover-ink2: #B9C1D6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0D111C;
+    --surface: #151A28;
+    --line: #252C3D;
+    --ink: #ECEFF6;
+    --ink2: #A6ADC2;
+    --primary: #C9D3F5;
+    --link: #C9D3F5;
+    --cloth: #1D2949;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 16px/1.6 'Hind Siliguri', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+a { color: var(--link); text-underline-offset: 3px; }
+h1, h2, h3 { font-family: 'Anek Bangla', 'Hind Siliguri', system-ui, sans-serif; font-weight: 600; line-height: 1.2; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+
+/* The navy bookcloth cover with a double gilt fillet, as in the app. */
+.cover {
+  position: relative;
+  margin: 16px auto 0;
+  max-width: 760px;
+  border-radius: 22px;
+  color: var(--cover-ink);
+  background-color: var(--cloth);
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,.04) 0 1px, transparent 1px 4px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,.12) 0 1px, transparent 1px 4px);
+  padding: 56px 28px 48px;
+  text-align: center;
+}
+.cover::before, .cover::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgba(216,181,106,.55);
+}
+.cover::before { inset: 8px; border-radius: 16px; }
+.cover::after { inset: 12px; border-radius: 12px; border-color: rgba(216,181,106,.3); }
+.mark {
+  display: inline-grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  background: #18223D;
+  border: 1.5px solid rgba(216,181,106,.6);
+  color: var(--gilt);
+  font: 600 38px/1 'Anek Bangla', sans-serif;
+}
+.cover h1 { margin: 18px 0 8px; font-size: 44px; color: var(--cover-ink); }
+.cover p { margin: 0 auto; max-width: 30em; color: var(--cover-ink2); font-size: 18px; }
+.cover .note { margin-top: 18px; font-size: 14px; }
+
+main { padding: 8px 0 32px; }
+section { margin-top: 28px; }
+h2 { font-size: 24px; margin: 0 0 12px; }
+.cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 16px;
+}
+.card h3 { margin: 0 0 4px; font-size: 18px; }
+.card p { margin: 0; color: var(--ink2); font-size: 15px; }
+
+.doc { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 8px 20px 20px; margin-top: 20px; }
+.doc h1 { font-size: 32px; margin: 18px 0 4px; }
+.doc h2 { font-size: 21px; margin: 28px 0 8px; }
+.doc p, .doc li { color: var(--ink); }
+.doc .muted { color: var(--ink2); }
+.doc ul { padding-left: 22px; }
+.doc li { margin: 4px 0; }
+code { font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: .92em; }
+
+.back { display: inline-block; margin-top: 16px; font-weight: 600; }
+footer { border-top: 1px solid var(--line); margin-top: 32px; padding: 20px 0 40px; color: var(--ink2); font-size: 14px; }
+footer a { font-weight: 600; }
+
+@media (max-width: 480px) {
+  .cover { margin: 0; border-radius: 0; padding: 48px 20px 40px; }
+  .cover::before { inset: 6px; border-radius: 12px; }
+  .cover::after { inset: 10px; border-radius: 9px; }
+  .cover h1 { font-size: 38px; }
+  .doc { padding: 4px 16px 16px; }
+}
