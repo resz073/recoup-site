@@ -15,7 +15,7 @@
 <a class="back" href="./">← Recoup</a>
 <article class="doc">
   <h1>Recoup privacy policy</h1>
-  <p class="muted">Effective 31 October 2026</p>
+  <p class="muted">Effective 1 November 2026</p>
 
   <p>Recoup is an Android app for keeping track of money you spend for your office until it's paid back, and money you lend or borrow. This policy explains what Recoup for Android does with your information.</p>
   <p>In short: your ledger and receipt photos stay on your phone, encrypted with your PIN. If you choose to sign in with Google, encrypted copies are also kept in your own Google Drive. Nobody else receives your data, including the developer.</p>
@@ -38,6 +38,7 @@
     <li><strong>Access to Recoup's own hidden folder in your Google Drive</strong> (the app data folder, permission <code>drive.appdata</code>). Recoup uses it to keep an encrypted copy of your ledger, so it can be synced between your phones and brought back on a new phone; an encrypted copy from the start of each day for the last 14 days, so you can restore an earlier version; and encrypted copies of your receipt photos, so they come back on a new phone too. Recoup can't see, open or change any other file in your Google Drive.</li>
   </ul>
   <p>The copies are encrypted on your phone before they're uploaded, so neither Google nor anyone else can read them without your PIN or recovery key. Recoup talks to Google directly from your phone; there is no Recoup server.</p>
+  <p>Signing in doesn't create a Recoup account. There are no Recoup accounts: signing in only lets Recoup use its hidden folder in your own Google Drive.</p>
   <p>Recoup's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 
   <h2>What Recoup doesn't do</h2>
@@ -57,14 +58,19 @@
     <li><strong>Run at startup</strong>: so reminders are still on time after the phone restarts.</li>
     <li><strong>Fingerprint</strong> (optional): handled by Android. Recoup never sees your fingerprint.</li>
   </ul>
+  <p>Android also gives Recoup a few permissions without asking, used by its reminder scheduling: running a short background job, keeping the phone awake while it runs, and checking whether the phone is online.</p>
   <p>Recoup doesn't ask for access to your camera, photos, contacts or location.</p>
 
-  <h2>Deleting your data</h2>
+  <h2 id="delete">Deleting your data</h2>
+  <p>There's no Recoup account to delete: your data is only on your phone and, if you signed in with Google, in your own Google Drive. Here's how to remove it.</p>
   <ul>
     <li><strong>Erase data</strong>, in Recoup's Account tab, deletes your ledger, receipt photos, PIN and settings from the phone, and stops its reminders.</li>
     <li><strong>Sign out</strong>, in the same tab, stops syncing and takes back Recoup's access to your Google Drive.</li>
     <li>To delete the copies in Google Drive, including receipt photos, open Google Drive on the web, go to Settings, then Manage apps, find Recoup, and choose Options, then Delete hidden app data. You can also remove Recoup's access to your Google account at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
   </ul>
+
+  <h2>Children</h2>
+  <p>Recoup is meant for adults keeping track of their own money. It isn't directed at children.</p>
 
   <h2>Changes to this policy</h2>
   <p>If this policy changes, the new version will be posted on this page with a new effective date.</p>
